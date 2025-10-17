@@ -30,7 +30,7 @@ export class QueueScroll extends LitElement {
             display:flex;
             padding: 0;
             margin: 0;
-            height:50%;
+            height:100%;
             width:max-content;
             animation: scroll linear infinite;
             animation-duration: 10s;
