@@ -155,16 +155,17 @@ export class QueueScroll extends LitElement {
     updateTemplate(){
         this.queueStats = this.queueData.map((item: any) => { return html`<li> | Queue: ${item.lastQueue.name} Contacts: ${item.aggregation[1].value} Wait: ${new Date(Date.now() - item.aggregation[0].value).toISOString().slice(11, -5)} |</li>` })
     }
-    render() {
-        return html`
-        <div class="marquee-container">
-            <ul class="marquee" style="animation-duration: ${this.queueStats.length * 10}s">
-                ${this.queueStats}
-                ${this.queueStats}
-            </ul>
-        </div>
-        `;
-    }
+  render() {
+    return html`
+      <!-- expose the size as a CSS var so you can change it per-instance -->
+      <div class="marquee-container" style="--qs-font-size: ${this.fontSize}">
+        <ul class="marquee" style="animation-duration: ${this.queueStats.length * 10}s">
+          ${this.queueStats}
+          ${this.queueStats}
+        </ul>
+      </div>
+    `;
+  }
 }
 
 declare global {
