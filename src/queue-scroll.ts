@@ -18,7 +18,7 @@ export class QueueScroll extends LitElement {
             display: flex;
             }
             .marquee-container {
-            width: 80vw;
+            width: 150vw;
             height: 50px; /* Set a fixed height for the container */
             overflow: hidden; 
             border:solid;
@@ -42,7 +42,7 @@ export class QueueScroll extends LitElement {
             align-items:center;
             justify-content:center;
             flex-shrink:0;
-            font-size:2rem;
+            font-size:1rem;
             white-space:nowrap;
             padding: 0 1rem 0 1rem;
             }
