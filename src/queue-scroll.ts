@@ -13,55 +13,50 @@ export class QueueScroll extends LitElement {
     @state() queueData?: any
     @state() mapUpdate?: any
     static styles = [
-        css`
-            :host {
-            display: flex;
-            font-size: var(--qs-font-size, 14px);
-            }
-            .marquee-container {
-            width: 80vw;
-            height: 50px; /* Set a fixed height for the container */
-            overflow: hidden; 
-            border:solid;
-            border-radius:25px;
-            }
-
-            .marquee {
-            list-style: none; /* Remove default list styles */
-            display:flex;
-            padding: 0;
-            margin: 0;
-            height:100%;
-            width:max-content;
-            animation: scroll linear infinite;
-            animation-duration: 10s;
-            align-items:center;
-            }
-            .marquee li {
-            display:flex;
-            align-self:center;
-            align-items:center;
-            justify-content:center;
-            flex-shrink:0;
-            font-size:1rem;
-            white-space:nowrap;
-            padding: 0 1rem 0 1rem;
-            }
-            .marquee:hover{
-            animation-play-state: paused;
-
-            }
-
-            @keyframes scroll {
-            0% {
-                transform: translateX(0); /* Start position */
-            }
-            100% {
-                transform: translateX(-50%); /* End position (fully scrolled) */
-            }
-            }
-        `
-    ];
+    css`
+      :host {
+        display: flex;
+        /* 👇 force a base size inside the shadow root */
+        font-size: var(--qs-font-size, 14px);
+      }
+      .marquee-container {
+        width: 80vw;
+        height: 40px;            /* optionally slimmer bar */
+        overflow: hidden; 
+        border: solid;
+        border-radius: 25px;
+      }
+      .marquee {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: max-content;
+        animation: scroll linear infinite;
+        animation-duration: 10s;
+        align-items: center;
+        /* 👇 inherit from :host so everything scales together */
+        font-size: 1em;
+      }
+      .marquee li {
+        display: flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        /* 👇 1em means “same as container” */
+        font-size: 1em;
+        white-space: nowrap;
+        padding: 0 0.75rem;
+      }
+      .marquee:hover { animation-play-state: paused; }
+      @keyframes scroll {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    `
+  ];
     connectedCallback() {
         super.connectedCallback()
         this.getQueues()
