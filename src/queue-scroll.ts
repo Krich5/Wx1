@@ -161,7 +161,7 @@ export class QueueScroll extends LitElement {
     }
     render() {
         return html`
-        <div class="marquee-container" style="--qs-font-size: ${this.fontSize}">
+        <div class="marquee-container">
             <ul class="marquee" style="animation-duration: ${this.queueStats.length * 10}s">
                 ${this.queueStats}
                 ${this.queueStats}
