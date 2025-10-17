@@ -16,13 +16,13 @@ export class QueueScroll extends LitElement {
         css`
             :host {
             display: flex;
+            font-size: var(--qs-font-size, 14px);
             }
             .marquee-container {
             width: 80vw;
             height: 50px; /* Set a fixed height for the container */
             overflow: hidden; 
             border:solid;
-            font-size:1rem;
             border-radius:25px;
             }
 
@@ -43,7 +43,7 @@ export class QueueScroll extends LitElement {
             align-items:center;
             justify-content:center;
             flex-shrink:0;
-            font-size:2rem;
+            font-size:1rem;
             white-space:nowrap;
             padding: 0 1rem 0 1rem;
             }
