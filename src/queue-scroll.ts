@@ -42,7 +42,7 @@ export class QueueScroll extends LitElement {
             align-items:center;
             justify-content:center;
             flex-shrink:0;
-            font-size:12px;
+            font-size:0.8rem;
             white-space:nowrap;
             padding: 0 1rem 0 1rem;
             }
@@ -161,7 +161,7 @@ export class QueueScroll extends LitElement {
     }
     render() {
         return html`
-        <div class="marquee-container">
+        <div class="marquee-container" style="--qs-font-size: ${this.fontSize}">
             <ul class="marquee" style="animation-duration: ${this.queueStats.length * 10}s">
                 ${this.queueStats}
                 ${this.queueStats}
