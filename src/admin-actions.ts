@@ -24,7 +24,7 @@ export class AdminActions extends LitElement {
             margin-top: 15px;
             }
             tr, th, td{
-            border: solid 1px;
+            border: solid 0px;
             text-align: center;
             }
             .hidden{
