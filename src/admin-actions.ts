@@ -7,28 +7,38 @@ export class AdminActions extends LitElement {
     @state() agentList = []
     static styles = [
         css`
-            :host{
-            display: flex;
-            flex-direction: column;
-            border: solid 3px var(--md-primary-text-color);
-            padding: 2em;
-            color:var(--md-primary-text-color)
+            :host {
+                display: flex;
+                flex-direction: column;
+                /* border removed */
+                padding: 2em;
+                color: var(--md-primary-text-color);
             }
-            .title{
-            text-align: center
+
+            .title {
+                text-align: center;
             }
-            table{
-            display:table;
-            border-collapse:collapse;
-            border-spacing: 0;
-            margin-top: 15px;
+
+            table {
+                display: table;
+                border-collapse: collapse;
+                border-spacing: 0;
+                margin-top: 15px;
+                width: 100%;
             }
-            tr, th, td{
-            border: solid 1px;
-            text-align: center;
+
+            tr, th, td {
+                /* removed borders */
+                text-align: center;
+                padding: 0.5em;
             }
-            .hidden{
-            display:none;
+
+            .hidden {
+                display: none;
+            }
+
+            button {
+                cursor: pointer;
             }
         `
     ];
