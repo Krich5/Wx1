@@ -18,8 +18,6 @@ export class AdminActions extends LitElement {
             }
             table{
             display:table;
-            border-collapse:collapse;
-            border-spacing: 0;
             margin-top: 15px;
             }
             tr, th, td{
