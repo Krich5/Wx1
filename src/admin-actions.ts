@@ -10,7 +10,6 @@ export class AdminActions extends LitElement {
             :host{
             display: flex;
             flex-direction: column;
-            border: solid 3px var(--md-primary-text-color);
             padding: 2em;
             color:var(--md-primary-text-color)
             }
@@ -24,7 +23,6 @@ export class AdminActions extends LitElement {
             margin-top: 15px;
             }
             tr, th, td{
-            border: solid 0px;
             text-align: center;
             }
             .hidden{
