@@ -14,38 +14,36 @@ export class QueueScroll extends LitElement {
     @state() mapUpdate?: any
     static styles = [
         css`
-            :host {
-            display: flex;
-            }
-            .marquee-container {
-            width: 80vw;
-            height: 40px; /* Set a fixed height for the container */
-            overflow: hidden; 
-            border:solid;
-            border-radius:25px;
-            }
+:host {
+  display: flex;
+}
+.marquee-container {
+  width: 80vw;
+  height: 40px;
+  overflow: hidden;
+  border: solid;
+  border-radius: 25px;
+}
 
-            .marquee {
-            list-style: none; /* Remove default list styles */
-            display:flex;
-            padding: 0;
-            margin: 0;
-            height:100%;
-            width:max-content;
-            align-items:center;
-            }
-            .marquee li {
-            display:flex;
-            align-self:center;
-            align-items:center;
-            justify-content:center;
-            flex-shrink:0;
-            font-size:0.8rem;
-            white-space:nowrap;
-            padding: 0 1rem 0 1rem;
-            }
-            .marquee:hover{
-            animation-play-state: paused;
+.marquee {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: max-content;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.marquee li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 0 1rem;
+}
 
             }
 
