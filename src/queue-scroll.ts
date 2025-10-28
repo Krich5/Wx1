@@ -12,51 +12,38 @@ export class QueueScroll extends LitElement {
     @state() _timerInterval?: any
     @state() queueData?: any
     @state() mapUpdate?: any
-    static styles = [
-        css`
-:host {
-  display: flex;
-}
-.marquee-container {
-  width: 80vw;
-  height: 40px;
-  overflow: hidden;
-  border: solid;
-  border-radius: 25px;
-}
+static styles = [
+  css`
+    :host { display: flex; }
+    .marquee-container {
+      width: 80vw;
+      height: 40px;
+      overflow: hidden;
+      border: solid;
+      border-radius: 25px;
+    }
 
-.marquee {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: max-content;
-  align-items: center;
-  font-size: 0.8rem;
-}
+    .marquee {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: max-content;
+      align-items: center;
+      font-size: 0.8rem;
+    }
 
-.marquee li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  white-space: nowrap;
-  padding: 0 1rem;
-}
-
-            }
-
-            @keyframes scroll {
-            0% {
-                transform: translateX(0); /* Start position */
-            }
-            100% {
-                transform: translateX(-50%); /* End position (fully scrolled) */
-            }
-            }
-        `
-    ];
+    .marquee li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      white-space: nowrap;
+      padding: 0 1rem;
+    }
+  `
+];
     connectedCallback() {
         super.connectedCallback()
         this.getQueues()
@@ -158,11 +145,7 @@ export class QueueScroll extends LitElement {
 render() {
   return html`
     <div class="marquee-container">
-      <ul
-        class="marquee"
-        style="font-size:12px; animation-duration:${this.queueStats.length * 10}s"
-      >
-        ${this.queueStats}
+      <ul class="marquee">
         ${this.queueStats}
       </ul>
     </div>
